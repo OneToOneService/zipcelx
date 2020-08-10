@@ -23,6 +23,7 @@ export default (config) => {
   const zip = new JSZip();
   const xl = zip.folder('xl');
   xl.file('workbook.xml', workbookXML);
+  xl.file('styles.xml', `<?xml version="1.0" encoding="UTF-8"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="3"><numFmt numFmtId="100" formatCode="YYYY-MM-DD" /><numFmt numFmtId="101" formatCode="YYYY-MM-DD" /><numFmt numFmtId="102" formatCode="YYYY-MM-DD hh:mm:ss am/pm" /></numFmts><cellXfs count="3"><xf numFmtId="100" applyNumberFormat="1" /><xf numFmtId="101" applyNumberFormat="1" /><xf numFmtId="102" applyNumberFormat="1" /></cellXfs></styleSheet>`);
   xl.file('_rels/workbook.xml.rels', workbookXMLRels);
   zip.file('_rels/.rels', rels);
   zip.file('[Content_Types].xml', contentTypes);
